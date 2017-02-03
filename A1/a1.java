@@ -16,11 +16,24 @@ public class a1 {
 	
 	public class Node {
 		int row, column;
-		List<Node> connectedNodes;
+		ArrayList<Node> connectedNodes;
+		boolean hasLight;
 		
 		public Node(int row, int column) {
 			this.row = row;
 			this.column = column;
+			this.hasLight = false;
+			connectedNodes = new ArrayList<Node>();
+		}
+	}
+	
+	public class Constraint {
+		ArrayList<Node> connectedNodes;
+		int numLightsAllowed;
+		
+		public Constraint(int numLightsAllowed) {
+			this.numLightsAllowed = numLightsAllowed;
+			connectedNodes = new ArrayList<Node>();
 		}
 	}
 }
